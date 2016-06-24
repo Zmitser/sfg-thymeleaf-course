@@ -12,22 +12,23 @@
     <link rel="stylesheet" href="../static/css/custom.css" th:href="@{/css/custom.css}">
 </head>
 <body>
-<div class="jumbotron">
+<div class="jumbotron" th:replace="fragments/jumbotron :: jumbotron">
     <div class="container center">
         <h1>Spring Framework Guru!</h1>
-        <p class="lead">Online courses for Spring Framework</p>
+        <p class="lead" th:text="#{index.courses.tagLine}">Tagline</p>
     </div>
-
 </div>
+>
 
-<div class="container" >
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1>Spring Framework Guru - Course name</h1>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <img src="../static/images/J8mqML4lQRmUmM4gdCW0_Thumb_Thymeleaf.png" th:src="@{/images/J8mqML4lQRmUmM4gdCW0_Thumb_Thymeleaf.png}"alt="center-block img-repsonsive">
+                <img src="../static/images/J8mqML4lQRmUmM4gdCW0_Thumb_Thymeleaf.png"
+                     th:src="@{/images/J8mqML4lQRmUmM4gdCW0_Thumb_Thymeleaf.png}" alt="center-block img-repsonsive">
                 <p>Course Image 506px x 290 px</p>
                 <h3>Coding Assigment</h3>
                 <ol>
@@ -35,7 +36,13 @@
                         consequuntur dolor dolore fuga hic magnam, maiores nostrum nulla optio perferendis praesentium
                         provident quia quibusdam repellat?
                     </li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deleniti harum in labore laboriosam
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deleniti harum in labore
+                        laboriosam
+                        officia, officiis qui quod soluta. Ad blanditiis commodi fugiat harum labore quas quos tempora
+                        voluptatibus. Natus.
+                    </li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deleniti harum in labore
+                        laboriosam
                         officia, officiis qui quod soluta. Ad blanditiis commodi fugiat harum labore quas quos tempora
                         voluptatibus. Natus.
                     </li>
@@ -43,22 +50,34 @@
             </div>
             <div class="col-md-6">
                 <h1>Course title</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum sunt totam vitae. Ab blanditiis debitis
-                    dolores ducimus ex facilis hic labore, non placeat porro, quasi quia quod rem repellendus repudiandae!
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum sunt totam vitae. Ab blanditiis
+                    debitis
+                    dolores ducimus ex facilis hic labore, non placeat porro, quasi quia quod rem repellendus
+                    repudiandae!
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi, aspernatur consequatur
-                    deleniti dolores, dolorum eaque ex laboriosam maiores minima perferendis quidem quisquam quos ratione
+                    deleniti dolores, dolorum eaque ex laboriosam maiores minima perferendis quidem quisquam quos
+                    ratione
                     repudiandae sed, tempore! Aspernatur, eaque.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam assumenda aut beatae dolor dolores
-                    esse itaque, modi mollitia numquam omnis pariatur quidem rem repudiandae sunt ullam voluptatum! Fuga,
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam assumenda aut beatae dolor
+                    dolores
+                    esse itaque, modi mollitia numquam omnis pariatur quidem rem repudiandae sunt ullam voluptatum!
+                    Fuga,
                     perspiciatis?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda deserunt earum eveniet, minus nihil quaerat sint tempora? Asperiores aspernatur commodi doloremque ea earum ex illum, inventore ipsa rem soluta!
                 </p>
             </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-md-offset-6 col-md-4">
+            <button class="btn btn-success" th:text="#{button.buy.now}">Buy Now</button>
+        </div>
+    </div>
 
 </div>
-
+<div class="container" th:replace="fragments/footer :: footer">
+    <p>footer</p>
+</div>
 <script src="https://cdn.jsdelivr.net/jquery/2.2.4/jquery.min.js"
         th:src="@{/webjars/jquery/2.2.4/jquery.min.js}"></script>
 <script src="https://cdn.jsdelivr.net/bootstrap/3.3.6/js/bootstrap.min.js"
