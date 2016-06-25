@@ -27,14 +27,27 @@
     </div>
 
 
-    <div class="row course-list list">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+        </tr>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.courseName}"></td>
+        </tr>
+    </table>
+
+
+    <div class="row course-list list" th:remove="all">
         <div class="col-md-4">
             <div class="course-listing">
                 <div class="row">
                     <a data-role="course-box-link" href="/product/3">
                         <div class="col-lg-12">
                             <div class="course-box-image-container">
-                                <img src="../static/images/J8mqML4lQRmUmM4gdCW0_Thumb_Thymeleaf.png" th:src="@{/images/J8mqML4lQRmUmM4gdCW0_Thumb_Thymeleaf.png}" alt="thymeleaf"
+                                <img src="../static/images/J8mqML4lQRmUmM4gdCW0_Thumb_Thymeleaf.png"
+                                     th:src="@{/images/J8mqML4lQRmUmM4gdCW0_Thumb_Thymeleaf.png}" alt="thymeleaf"
                                      class="course-box-image">
                             </div>
                             <div class="course-listing-title">Thymeleaf</div>
@@ -55,11 +68,7 @@
                     <div class="col-sm-4 price">$15</div>
                 </div>
             </div>
-
-
         </div>
-
-
     </div>
 </div>
 

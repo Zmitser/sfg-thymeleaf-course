@@ -97,14 +97,14 @@ public class ProductServiceImpl implements ProductService {
 
         Product springCoreAdv = new Product();
         springCoreAdv.setId(4);
-        springCoreUltimate.setCourseName("Spring Core Advanced");
-        springCoreUltimate.setCourseSubtitle("Advanced Topics of Spring Core");
-        springCoreUltimate.setAuthor(jt);
-        springCoreUltimate.setCourseDescription("My Spring Core course is intended to be a predecessor to this course. In Spring Core, I gave you a solid foundation in working with the Spring Framework. In this course, I build upon that foundation expanding your skills with the Spring Framework. The skills taught in this course are skills you will need for enterprise application development with the Spring Framework.");
-        springCoreUltimate.setPrice(new BigDecimal(199));
-        springCoreUltimate.setImageUrl("fMahox0zTOW4gYkMMjmN_ThumbSPRINcoreAdv.png");
-        springCoreUltimate.getProductCategories().add(springBootCat);
-        springCoreUltimate.getProductCategories().add(springCoreCat);
+        springCoreAdv.setCourseName("Spring Core Advanced");
+        springCoreAdv.setCourseSubtitle("Advanced Topics of Spring Core");
+        springCoreAdv.setAuthor(jt);
+        springCoreAdv.setCourseDescription("My Spring Core course is intended to be a predecessor to this course. In Spring Core, I gave you a solid foundation in working with the Spring Framework. In this course, I build upon that foundation expanding your skills with the Spring Framework. The skills taught in this course are skills you will need for enterprise application development with the Spring Framework.");
+        springCoreAdv.setPrice(new BigDecimal(199));
+        springCoreAdv.setImageUrl("fMahox0zTOW4gYkMMjmN_ThumbSPRINcoreAdv.png");
+        springCoreAdv.getProductCategories().add(springBootCat);
+        springCoreAdv.getProductCategories().add(springCoreCat);
         productMap.put(4, springCoreAdv);
 
 
