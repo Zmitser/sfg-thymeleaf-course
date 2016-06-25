@@ -12,45 +12,40 @@
     <link rel="stylesheet" href="../static/css/custom.css" th:href="@{/css/custom.css}">
 </head>
 <body>
-<div class="jumbotron" th:replace="fragments/jumbotron :: jumbotron">
+<div class="jumbotron">
     <div class="container center">
-        <h1>Spring Framework Guru!</h1>
+        <h1 th:text="${product.courseName}">Spring Framework Guru!</h1>
         <p class="lead" th:text="#{index.courses.tagLine}">Tagline</p>
     </div>
 </div>
->
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Spring Framework Guru - Course name</h1>
+            <h1 th:text="${product.courseSubtitle}">Spring Framework Guru - Course name</h1>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <img src="../static/images/J8mqML4lQRmUmM4gdCW0_Thumb_Thymeleaf.png"
-                     th:src="@{/images/J8mqML4lQRmUmM4gdCW0_Thumb_Thymeleaf.png}" alt="center-block img-repsonsive">
-                <p>Course Image 506px x 290 px</p>
-                <h3>Coding Assigment</h3>
-                <ol>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci, aliquam aliquid amet atque
-                        consequuntur dolor dolore fuga hic magnam, maiores nostrum nulla optio perferendis praesentium
-                        provident quia quibusdam repellat?
-                    </li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deleniti harum in labore
-                        laboriosam
-                        officia, officiis qui quod soluta. Ad blanditiis commodi fugiat harum labore quas quos tempora
-                        voluptatibus. Natus.
-                    </li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deleniti harum in labore
-                        laboriosam
-                        officia, officiis qui quod soluta. Ad blanditiis commodi fugiat harum labore quas quos tempora
-                        voluptatibus. Natus.
-                    </li>
-                </ol>
+                     th:src="@{'/images/' + ${product.imageUrl}}" alt="center-block img-repsonsive">
+                <div class="row course-listing-extra-info col-xs-12">
+                    <div class="col-xs-8">
+                        <img align="left" width="30" height="30" src="../static/images/no_avatar.jpg" th:src="@{'/images/' + ${product.author.image}}" alt="">
+                        <div class="small course-author-name" th:text="${(product.author.firstName) + ' ' + (product.author.lastName)}">
+                            John Thomson
+                        </div>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <div class="small course-price" th:text="${product.price > 0 ? product.price : 'FREE'}"></div>
+                    </div>
+                </div>
             </div>
+
+
             <div class="col-md-6">
-                <h1>Course title</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum sunt totam vitae. Ab blanditiis
+                <h1 th:text="${product.courseName}">Course title</h1>
+                <p th:text="${product.courseDescription}">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Illum sunt totam vitae. Ab blanditiis
                     debitis
                     dolores ducimus ex facilis hic labore, non placeat porro, quasi quia quod rem repellendus
                     repudiandae!
@@ -63,16 +58,19 @@
                     esse itaque, modi mollitia numquam omnis pariatur quidem rem repudiandae sunt ullam voluptatum!
                     Fuga,
                     perspiciatis?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda deserunt earum eveniet, minus nihil quaerat sint tempora? Asperiores aspernatur commodi doloremque ea earum ex illum, inventore ipsa rem soluta!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda deserunt earum
+                    eveniet, minus nihil quaerat sint tempora? Asperiores aspernatur commodi doloremque ea earum ex
+                    illum, inventore ipsa rem soluta!
                 </p>
+                <div class="row">
+                    <div class="col-md-offset-6 col-md-4">
+                        <button class="btn btn-success" th:text="#{button.buy.now}">Buy Now</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-offset-6 col-md-4">
-            <button class="btn btn-success" th:text="#{button.buy.now}">Buy Now</button>
-        </div>
-    </div>
+
 
 </div>
 <div class="container" th:replace="fragments/footer :: footer">
